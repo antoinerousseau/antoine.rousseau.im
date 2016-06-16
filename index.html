@@ -21,7 +21,7 @@
     <div id="main" role="main">
       <p>My name is Antoine. I'm a Web developer, currently in Guadalajara, Mexico.</p>
       <p>I'm working on the <a href="https://tribeez.net">Tribeez</a> project.</p>
-      <p>You can have a look at <a href="resume.html">my CV</a>, check my references on <a href="http://www.linkedin.com/in/antoinerousseau">LinkedIn</a> or simply <a href="http://scr.im/mooot">email me</a>.</p>
+      <p>You can have a look at <a href="resume.html">my CV</a>, check my references on <a href="http://www.linkedin.com/in/antoinerousseau">LinkedIn</a> or simply <a id="to" href="http://scr.im/mooot">email me</a>.</p>
     </div>
     <footer>
       <img id="qrcode" src="img/qrcode.png" alt="" title="Scan this QR code to add my contact details to your smartphone" />
@@ -32,6 +32,20 @@
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
     s.parentNode.insertBefore(g,s)}(document,"script"));
+
+    var shown = false;
+    var show = function() {
+      if (shown) return;
+      shown = true;
+      var data = ['rousseau.im', 'antoine'];
+      var el = document.getElementById('to');
+      el.href = 'mailto:' + data[1] + '@' + data[0];
+    }
+    // start scripts right now:
+    document.onmousemove = show;
+    document.onscroll = show;
+    document.body.ontouchstart = show;
+    setTimeout(show, 2000);
   </script>
 </body>
 </html>

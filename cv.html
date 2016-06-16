@@ -17,14 +17,19 @@
   <div id="cv">
     <header>
       <h1>Antoine Rousseau</h1>
-      <p>E-mail : <a href="http://scr.im/mooot">(cliquez pour dévoiler)</a></p>
+      <p>E-mail : <a id="to">&nbsp;</a></p>
       <p>30 ans, Permis B</p>
     </header>
     <div id="main" role="main">
       <h2>Expérience professionnelle</h2>
       <article>
+        <div class="title">Depuis janvier 2016</div>
+        <div class="description">Développement du projet <a href="https://tribeez.net/">Tribeez</a> (Guadalajara, Mexique)
+        <br /><span class="more">Application Web (React) et mobile (React Native) (ES6 JS, cf <a href="https://github.com/antoinerousseau/mytribe">GitHub</a>)</span></div>
+      </article>
+      <article>
         <div class="title">De septembre 2011 à octobre 2015</div>
-        <div class="description">Ingénieur R&amp;D Web chez <a href="http://teads.tv/">Teads</a> (anciennement Ebuzzing) (Toulouse puis Montpellier, France)
+        <div class="description">Ingénieur R&amp;D Web chez <a href="http://teads.tv/">Teads</a> (Toulouse puis Montpellier, France)
         <br /><span class="more">Lecteur vidéo multi plateformes (TypeScript, HaXe, Javascript, HTML5, jQuery)<br />APIs &amp; ad server (Python, Node.js, PHP)<br />Dashboard client visualisant les métriques de leurs campagnes (Javascript via Browserify/Gulp)</span></div>
       </article>
       <article>
@@ -94,29 +99,33 @@
       </article>
       <h2>Compétences en développement Web</h2>
       <article>
+        <div class="title">Mobile</div>
+        <div class="description">React Native</div>
+      </article>
+      <article>
         <div class="title">Front-end</div>
-        <div class="description">HTML5 et CSS3, Javascript natif, jQuery et Mootools, Haxe</div>
+        <div class="description">Javascript (vanilla ES5&amp;6, React, NPM modules, jQuery, <s>Mootools, Haxe</s>), HTML5, CSS3</div>
       </article>
       <article>
         <div class="title">Back-end</div>
-        <div class="description">PHP 5 et Symfony 2, Python, Java</div>
+        <div class="description">Node.js, Python, <s>PHP 5 et Symfony 2, Java</s></div>
       </article>
       <article>
         <div class="title">Bases de données</div>
         <div class="description">MySQL, Oracle, NoSQL</div>
       </article>
       <article>
-        <div class="title">Systèmes maîtrisés</div>
-        <div class="description">MacOS, Linux (Debian), Windows</div>
+        <div class="title">Systèmes</div>
+        <div class="description">MacOS, Linux (Debian), <s>Windows</s></div>
       </article>
       <article>
-        <div class="title">Outils maîtrisés</div>
-        <div class="description">Git, SVN, Sublime Text 2, Trac et Redmine, Eclipse, Photoshop</div>
+        <div class="title">Outils</div>
+        <div class="description">Git et <a href="https://github.com/antoinerousseau">GitHub</a>, <s>SVN</s>, Sublime Text et Atom, Trac et Redmine, <s>Eclipse</s>, Photoshop</div>
       </article>
       <h2>Langues</h2>
       <article>
         <div class="title">Anglais</div>
-        <div class="description">Courant (très bon niveau, 2 ans passés au total en pays anglophones)</div>
+        <div class="description">Bilingue</div>
       </article>
       <article>
         <div class="title">Français</div>
@@ -124,12 +133,12 @@
       </article>
       <article>
         <div class="title">Espagnol</div>
-        <div class="description">Niveau moyen (7 mois en Amérique latine)</div>
+        <div class="description">Courant</div>
       </article>
       <h2>Loisirs</h2>
       <article>
         <div class="title">Sport</div>
-        <div class="description">Ski, Volley-ball, Equitation, Natation</div>
+        <div class="description">Ski, Natation, Volley-ball, Equitation</div>
       </article>
       <article>
         <div class="title">Centres d'intérêt</div>
@@ -142,6 +151,21 @@
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
     s.parentNode.insertBefore(g,s)}(document,"script"));
+
+    var shown = false;
+    var show = function() {
+      if (shown) return;
+      shown = true;
+      var data = ['rousseau.im', 'antoine'];
+      var el = document.getElementById('to');
+      el.innerHTML = data[1] + '@<span style="display:none">nobot.</span>' + data[0];
+      el.href = 'mailto:' + data[1] + '@' + data[0];
+    }
+    // start scripts right now:
+    document.onmousemove = show;
+    document.onscroll = show;
+    document.body.ontouchstart = show;
+    setTimeout(show, 2000);
   </script>
 </body>
 </html>

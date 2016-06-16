@@ -17,10 +17,15 @@
   <div id="cv">
     <header>
       <h1>Antoine Rousseau</h1>
-      <p>Email: <a href="http://scr.im/mooot">(click to reveal)</a></p>
+      <p>Email: <a id="to">&nbsp;</a></p>
     </header>
     <div id="main" role="main">
       <h2>Professional experience</h2>
+      <article>
+        <div class="title">Since January 2016</div>
+        <div class="description">Development of the <a href="https://tribeez.net/">Tribeez</a> project (Guadalajara, Mexico)
+        <br /><span class="more">Web (React) &amp; mobile (React Native) application (ES6 JS, see <a href="https://github.com/antoinerousseau/mytribe">GitHub</a>)</span></div>
+      </article>
       <article>
         <div class="title">September 2011 to October 2015</div>
         <div class="description">Web R&amp;D engineer at <a href="http://teads.tv/">Teads</a> (formerly Ebuzzing) (Toulouse and Montpellier, France)
@@ -89,12 +94,16 @@
       </article>
       <h2>Web development skills</h2>
       <article>
+        <div class="title">Mobile</div>
+        <div class="description">React Native</div>
+      </article>
+      <article>
         <div class="title">Front-end</div>
-        <div class="description">HTML5 and CSS3, native Javascript, jQuery &amp; Mootools, Haxe</div>
+        <div class="description">Javascript (vanilla ES5&amp;6, React, NPM modules, jQuery, <s>Mootools, Haxe</s>), HTML5, CSS3</div>
       </article>
       <article>
         <div class="title">Back-end</div>
-        <div class="description">PHP 5 &amp; Symfony 2, Python, Java</div>
+        <div class="description">Node.js, Python, <s>PHP 5 et Symfony 2, Java</s></div>
       </article>
       <article>
         <div class="title">Databases</div>
@@ -102,16 +111,16 @@
       </article>
       <article>
         <div class="title">Operating systems</div>
-        <div class="description">MacOS, Linux, Windows</div>
+        <div class="description">MacOS, Linux (Debian), <s>Windows</s></div>
       </article>
       <article>
         <div class="title">Software</div>
-        <div class="description">Git, SVN, Sublime Text 2, Trac &amp; Redmine, Eclipse, Photoshop</div>
+        <div class="description">Git &amp; <a href="https://github.com/antoinerousseau">GitHub</a>, <s>SVN</s>, Sublime Text &amp; Atom, Trac &amp; Redmine, <s>Eclipse</s>, Photoshop</div>
       </article>
       <h2>Languages</h2>
       <article>
         <div class="title">English</div>
-        <div class="description">Fluent (2 years in total spent in English-speaking countries)</div>
+        <div class="description">Bilingual</div>
       </article>
       <article>
         <div class="title">French</div>
@@ -119,12 +128,12 @@
       </article>
       <article>
         <div class="title">Spanish</div>
-        <div class="description">Conversational (7 months spent in Latin America)</div>
+        <div class="description">Fluent</div>
       </article>
       <h2>Other skills</h2>
       <article>
         <div class="title">2003</div>
-        <div class="description">French driving licence</div>
+        <div class="description">French driver's licence</div>
       </article>
       <article>
         <div class="title">2002</div>
@@ -133,7 +142,7 @@
       <h2>Extracurricilar activities</h2>
       <article>
         <div class="title">Sports</div>
-        <div class="description">Skiing, Volley-ball, Horse riding, Swimming</div>
+        <div class="description">Skiing, Swimming, Volley-ball, Horse riding</div>
       </article>
       <article>
         <div class="title">Personal interests</div>
@@ -146,6 +155,21 @@
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
     s.parentNode.insertBefore(g,s)}(document,"script"));
+
+    var shown = false;
+    var show = function() {
+      if (shown) return;
+      shown = true;
+      var data = ['rousseau.im', 'antoine'];
+      var el = document.getElementById('to');
+      el.innerHTML = data[1] + '@<span style="display:none">nobot.</span>' + data[0];
+      el.href = 'mailto:' + data[1] + '@' + data[0];
+    }
+    // start scripts right now:
+    document.onmousemove = show;
+    document.onscroll = show;
+    document.body.ontouchstart = show;
+    setTimeout(show, 2000);
   </script>
 </body>
 </html>

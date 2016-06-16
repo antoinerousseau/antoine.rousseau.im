@@ -21,7 +21,7 @@
     <div id="main" role="main">
       <p>Je m'appelle Antoine. Je suis développeur Web, actuellement à Guadalajara, Mexique.</p>
       <p>Je travaille sur le projet <a href="https://tribeez.net">Tribeez</a>.</p>
-      <p>Vous pouvez aller voir <a href="cv.html">mon CV</a>, lire mes références sur <a href="http://fr.linkedin.com/in/antoinerousseau/fr">LinkedIn</a> ou simplement <a href="http://scr.im/mooot">m'envoyer un e-mail</a>.</p>
+      <p>Vous pouvez aller voir <a href="cv.html">mon CV</a>, lire mes références sur <a href="http://fr.linkedin.com/in/antoinerousseau/fr">LinkedIn</a> ou simplement <a id="to" href="http://scr.im/mooot">m'envoyer un e-mail</a>.</p>
     </div>
     <footer>
       <img id="qrcode" src="img/qrcode.png" alt="" title="Scannez ce QR code pour ajouter ma carte de visite à votre smartphone" />
@@ -32,6 +32,20 @@
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
     s.parentNode.insertBefore(g,s)}(document,"script"));
+
+    var shown = false;
+    var show = function() {
+      if (shown) return;
+      shown = true;
+      var data = ['rousseau.im', 'antoine'];
+      var el = document.getElementById('to');
+      el.href = 'mailto:' + data[1] + '@' + data[0];
+    }
+    // start scripts right now:
+    document.onmousemove = show;
+    document.onscroll = show;
+    document.body.ontouchstart = show;
+    setTimeout(show, 2000);
   </script>
 </body>
 </html>

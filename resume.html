@@ -8,18 +8,26 @@
   <title>Antoine Rousseau</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27187206-11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-27187206-11');
+  </script>
   <script src="js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body>
   <div id="lang">
-    <p><a href="cv.html"><img class="flag" src="img/fr.png" alt="Français" /> Version française</a></p>
+    <p><a href="cv.html"><img class="flag" src="img/fr.png" alt="Français" /> Français</a></p>
   </div>
   <div id="cv">
     <header>
       <h1>Antoine Rousseau</h1>
       <p>Email: <a id="to">&nbsp;</a></p>
     </header>
-    <div id="main" role="main">
+    <main>
       <h2>Professional experience</h2>
       <article>
         <div class="title">Since January 2016</div>
@@ -148,14 +156,9 @@
         <div class="title">Personal interests</div>
         <div class="description">Cinema, Internet &amp; technologies, Travels, Cooking</div>
       </article>
-    </div>
+    </main>
   </div>
   <script>
-    var _gaq=[["_setAccount","UA-6796129-10"],["_trackPageview"]];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-    s.parentNode.insertBefore(g,s)}(document,"script"));
-
     var shown = false;
     var show = function() {
       if (shown) return;

@@ -2,6 +2,8 @@
 
 My personal homepage made with [Gatsby](https://www.gatsbyjs.org/), [Contentful](https://www.contentful.com/) and [Netlify](https://www.netlify.com/).
 
+[https://antoine.rousseau.im](https://antoine.rousseau.im/)
+
 ## Requirements
 
 - [Node](https://nodejs.org/) v8+ and [Yarn](https://yarnpkg.com/) (`brew install node yarn`)

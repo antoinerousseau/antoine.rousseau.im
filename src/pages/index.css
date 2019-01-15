@@ -1,0 +1,19 @@
+#home h1 {
+  font-size: 3em;
+}
+#welcome {
+  margin-bottom: 40px;
+}
+#home p {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+#home a {
+  margin: 10px 20px 10px 0;
+}
+@media (max-width: 450px) {
+  #home a {
+    display: block;
+    margin: 25px 0;
+  }
+}

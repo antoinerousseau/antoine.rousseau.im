@@ -1,0 +1,67 @@
+/* base */
+html {
+  font-family: Lato, sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+a {
+  background-color: transparent;
+}
+a,
+button {
+  outline: none;
+}
+img {
+  border-style: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+code,
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button {
+  font: inherit;
+  margin: 0;
+}
+
+/* site */
+header {
+  text-align: right;
+}
+p {
+  white-space: pre-line;
+}
+a {
+  color: black;
+}
+button,
+.button {
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 10px;
+}
+button svg,
+.button svg {
+  vertical-align: -2px;
+  margin-right: 5px;
+}
+main {
+  margin: 0 auto;
+  padding: 0 30px 20px;
+  max-width: 800px;
+}

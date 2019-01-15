@@ -1,0 +1,39 @@
+#cv h2 {
+  margin: 1.5em 0 1em;
+}
+#cv ul {
+  padding: 0;
+}
+#cv li {
+  list-style-type: none;
+  display: flex;
+  margin: 1.3em 0;
+}
+#cv .date {
+  width: 275px;
+  font-weight: 300;
+}
+#cv .content {
+  flex: 1;
+}
+#cv .description {
+  font-weight: 300;
+  font-style: italic;
+}
+#cv .description p {
+  margin: 0.3em 0 0;
+}
+@media (max-width: 750px) {
+  #cv li {
+    display: block;
+  }
+  #cv li .date {
+    margin: 1.5em 0 0.5em;
+  }
+  html[lang='fr'] #cv li .date::after {
+    content: ' :';
+  }
+  html[lang='en'] #cv li .date::after {
+    content: ':';
+  }
+}

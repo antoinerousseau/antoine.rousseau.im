@@ -14,15 +14,24 @@ import locale_fr from 'react-intl/locale-data/fr'
 addLocaleData(locale_en)
 addLocaleData(locale_fr)
 
-const LANG = typeof window !== 'undefined' && (navigator.language || navigator.userLanguage).substr(0, 2)
-
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
   }
 
   state = {
-    lang: LANG || 'en',
+    lang: 'en',
+  }
+
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      const lang = (navigator.language || navigator.userLanguage).substr(0, 2)
+      if (lang !== this.state.lang) {
+        this.setState({
+          lang,
+        })
+      }
+    }
   }
 
   switchLang = (lang) => () => {

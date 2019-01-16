@@ -1,0 +1,87 @@
+==================================================================
+https://keybase.io/antoine
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://antoine.rousseau.im
+  * I am antoine (https://keybase.io/antoine) on keybase.
+  * I have a public key with fingerprint 1B5C 77C7 0297 8523 346F  4756 77DA 270D 4E75 46DE
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01019ea4cc6e4dc565e672b2bd17c5690879556e0795367b9b16e957fe43e059d88f0a",
+      "fingerprint": "1b5c77c702978523346f475677da270d4e7546de",
+      "host": "keybase.io",
+      "key_id": "77da270d4e7546de",
+      "kid": "01019ea4cc6e4dc565e672b2bd17c5690879556e0795367b9b16e957fe43e059d88f0a",
+      "uid": "3f5fc280c29b85d40416c24d00c14100",
+      "username": "antoine"
+    },
+    "merkle_root": {
+      "ctime": 1547632047,
+      "hash_meta": "ea221d9e4d8490829eef7d3a71564e551716fe92cb80839762c367335d4a5722",
+      "seqno": 4423047
+    },
+    "revoke": {
+      "sig_ids": [
+        "f23ed81e5543e785f23ee3a46ea9f29a6a219a9bf022f1bbb43fb6ea4eaf07240f"
+      ]
+    },
+    "service": {
+      "hostname": "antoine.rousseau.im",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1547632050,
+  "expire_in": 157680000,
+  "prev": "c18366171f8c13231960f543d6ef41cda7353d47fe9440423bab2dd0ee8762c4",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.80
+Comment: https://keybase.io/crypto
+
+yMPSAnicrVNtUBVVGAYEHUCSYrJB03JzBkGCs2fP7tm9UaaFllhRozdHoMt+nIUN
+uHvZvfeSIU6ZcynLwiymCcyPZphhrFBhssEQJJH4VhsgHLVMZvJjBhoLlQm1s0xN
+U9PP9s+Zd/d5n/d5n2fP8bgZYTHhZWeS4p4NrDwf3tO+KRCW+9itQ+WMYmobGVc5
+U0SmD1KsEdvvKTI0xsUAFrASkZGqCgRpKi/wRMBQgYrGYlpJQMQSzwsE0IMTsCIp
+rEAkHusEcQTwkiaKOpCZVEY3vAXE8lmG109pWYVXMVYxgBIWechxSNAR5gWMNRli
+oCGCeSRohDYWmrbTQcUpsk3SDJO+o4VnWt5/4P9n3YFpOk7ndRWKQIWSIvIaAogV
+VIg0AFQWsQA4QJtYXrmEULTs9ZuGlzAVqUwJsYqKiccyTb/jreo3HATLIyxwECBM
+95PtQk8J8cu0kcgQsppEFYuISoQSITrWOBmzvIAIz7OYFXQiQVURgchJWIAqFc9x
+VJHMYwipDJuUek3GhRDkKD1VYJGgWUSc4bZRQF2zGVcOo0OOaCJLKem6NAGnJpyM
+BCJLOpRkQYasJEuKDiDUWUVREKcr9CMisg4wREBn8iqcYVbQUKfJnZj+uX6aZQZs
+m8iBNKOECvNZpt9UzWIKKPT7fbbLsce/0ed0lBHF8yeXRzG8Gv1XaEeQWLZheqld
+FPkv53iQypBXfIZFPIaD4LEgAvo4c0iQUqqsyAkCNUwXVZaDHCsJQKfbagLREatq
+MuZ4TkM0cAnROCGnyArUNECI6NiK/raSpSH55QLKSQ30yv6ARZNtP5YbGRYeEzYz
+KsK5RGEx0fF/Xa36uDl3Xs7sfLR1YvzKYMK2vsuZLX1Lyx+qiYi/9/JHPx99vKGi
+5/3ku0P3Pbdn6ZPMmqax5v7Q/IaNWbtu9B3Kf3r1J2k7mdaaB9w5ezqNrMiv5i2t
+Ta/onrH7aOjbxbXNIDg4O+Piwq7wRT/WbF6bX3w43rOkcmvtzsj2b8Y7Mz4V1HNv
+pr6azpe9Xd1Zeq1+YkL5YPLM/V8K0W1zY2d5Zy6+VPJ52hcPVo8MF+obRg921Zy4
+WtfYobQnyz0Zv7HeY9tTk+vtXN8C5t3G0Ex3dfmVfdk3f72wRx24OjSHDN9IrOx6
+Tx6WttxBSRNg1bKWAwWxsfz6ddaW14tCGavH8P69TSeu/xIvHCzNXtWxf2rNuZHG
+iHlnL0Yv7j78VnL+yO3EsuZrzXVzz/rSVxT9vqXzdOP3WuXXwYR1VTuCO6pTWspx
+W4RJYLBrbTBn9eiCyaihU2N19VOt7utxU1lHyGeXlhTOXxbqOUOurY8ayHOvWJa4
+/WZMxsepXG9XfI1223W5QWvyDL1Rumnl8qdGjyd4ok63BQ50b4rAs7TZNwYeWX41
+O2fzoDk+/lPYyIt9yqkPU0afgU+kxIb39q5reW2sYXdBLlu/60idW52qSvxhZCSh
+58Leh7sz57/wTiiyNsW9oTUqOKm411Se/E4fPnlPw11DtbP7q0pB0rYqa+GiPE//
+S/uWN83b2ld9/vkO19lbfwDSfgO/
+=Pu3C
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/antoine
+
+==================================================================

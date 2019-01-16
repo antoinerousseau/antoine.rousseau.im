@@ -8,6 +8,7 @@ module.exports = {
     description: `Freelance Web development and consulting`,
     keywords: `react, javascript, react native, gatsby, freelance, consulting, development, toulouse`,
     author: `@mOoot`,
+    siteUrl: `https://antoine.rousseau.im`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -40,5 +41,6 @@ module.exports = {
       },
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
+    `gatsby-plugin-sitemap`,
   ],
 }

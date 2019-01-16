@@ -11,6 +11,14 @@ module.exports = {
     siteUrl: `https://antoine.rousseau.im`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato:300,400,300i,400i'],
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

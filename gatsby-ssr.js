@@ -11,9 +11,3 @@ import React from 'react'
 import Layout from './src/components/Layout'
 
 export const wrapPageElement = ({element}) => <Layout>{element}</Layout>
-
-export const onRenderBody = ({setHeadComponents}) => {
-  setHeadComponents([
-    <link key="fonts" href="https://fonts.googleapis.com/css?family=Lato:300,400,300i,400i" rel="stylesheet" />,
-  ])
-}

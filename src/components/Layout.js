@@ -1,76 +1,49 @@
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {IntlProvider, FormattedMessage} from 'react-intl'
-import {StaticQuery, graphql} from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 
 import {LOCALES} from '../config'
 import LanguageIcon from '../icons/Language'
 
 import './layout.css'
 
-import {addLocaleData} from 'react-intl'
-import locale_en from 'react-intl/locale-data/en'
-import locale_fr from 'react-intl/locale-data/fr'
-addLocaleData(locale_en)
-addLocaleData(locale_fr)
+const Layout = ({children}) => {
+  const [lang, setLang] = useState('fr')
 
-class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  }
+  useEffect(() => {
+    setLang((navigator.language || navigator.userLanguage).substr(0, 2))
+  }, [])
 
-  state = {
-    lang: 'en',
-  }
-
-  componentDidMount() {
-    if (typeof window !== 'undefined') {
-      const lang = (navigator.language || navigator.userLanguage).substr(0, 2)
-      if (lang !== this.state.lang) {
-        this.setState({
-          lang,
-        })
-      }
+  const data = useStaticQuery(query)
+  const messages = {}
+  data.allContentfulMessage.edges.forEach(({node}) => {
+    if (node.node_locale === LOCALES[lang]) {
+      messages[node.key] = node.message.message
     }
+  })
+
+  const switchLang = () => {
+    setLang(lang === 'fr' ? 'en' : 'fr')
   }
 
-  switchLang = (lang) => () => {
-    this.setState({
-      lang,
-    })
-  }
+  return (
+    <IntlProvider locale={lang} messages={messages}>
+      <>
+        <header>
+          <button onClick={switchLang} className="button">
+            <LanguageIcon />
+            <FormattedMessage id="switch" />
+          </button>
+        </header>
+        {children}
+      </>
+    </IntlProvider>
+  )
+}
 
-  render() {
-    const {children} = this.props
-    const {lang} = this.state
-
-    return (
-      <StaticQuery
-        query={query}
-        render={(data) => {
-          const messages = {}
-          data.allContentfulMessage.edges.forEach(({node}) => {
-            if (node.node_locale === LOCALES[lang]) {
-              messages[node.key] = node.message.message
-            }
-          })
-          return (
-            <IntlProvider locale={lang} messages={messages}>
-              <>
-                <header>
-                  <button onClick={this.switchLang(lang === 'fr' ? 'en' : 'fr')}>
-                    <LanguageIcon />
-                    <FormattedMessage id="switch" />
-                  </button>
-                </header>
-                {children}
-              </>
-            </IntlProvider>
-          )
-        }}
-      />
-    )
-  }
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

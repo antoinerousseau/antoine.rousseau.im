@@ -23,6 +23,19 @@
 #cv .description p {
   margin: 0.3em 0 0;
 }
+#cv .tags {
+  margin-top: 5px;
+}
+#cv .tag {
+  margin: 3px 6px 3px 0;
+  padding: 3px 4px;
+  background: #bbb;
+  color: white;
+  font-weight: 300;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 750px) {
   #cv li {
     display: block;

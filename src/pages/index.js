@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
-import {FormattedMessage, injectIntl} from 'react-intl'
+import {FormattedMessage, useIntl} from 'react-intl'
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
 import {LOCALES} from '../config'
 import SEO from '../components/SEO'
@@ -11,7 +12,9 @@ import MailIcon from '../icons/Mail'
 
 import './index.css'
 
-const HomePage = ({data, intl: {locale}}) => {
+const HomePage = ({data}) => {
+  const {locale} = useIntl()
+
   const {welcome, linkedin, malt, email} = data.allContentfulHome.edges.find(
     ({node}) => node.node_locale === LOCALES[locale]
   ).node
@@ -20,12 +23,7 @@ const HomePage = ({data, intl: {locale}}) => {
     <main id="home">
       <SEO lang={locale} />
       <FormattedMessage id="hi" tagName="h1" />
-      <div
-        id="welcome"
-        dangerouslySetInnerHTML={{
-          __html: welcome.childContentfulRichText.html,
-        }}
-      />
+      <div id="welcome">{documentToReactComponents(welcome.json)}</div>
       <Link to="/cv" className="button">
         <DescriptionIcon />
         <FormattedMessage id="cv" />
@@ -46,7 +44,7 @@ const HomePage = ({data, intl: {locale}}) => {
   )
 }
 
-export default injectIntl(HomePage)
+export default HomePage
 
 export const query = graphql`
   {
@@ -55,9 +53,7 @@ export const query = graphql`
         node {
           node_locale
           welcome {
-            childContentfulRichText {
-              html
-            }
+            json
           }
           linkedin
           malt

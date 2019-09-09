@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
-import {FormattedMessage, injectIntl} from 'react-intl'
+import {FormattedMessage, useIntl} from 'react-intl'
 
 import {LOCALES, BIRTHDATE} from '../config'
 import SEO from '../components/SEO'
@@ -21,39 +21,43 @@ const getAge = () => {
   return age
 }
 
-const getList = ({edges}, Comp, locale, type) => (
-  <ul>
-    {edges
-      .filter(({node}) => node.node_locale === LOCALES[locale] && (!type || type === node.type))
-      .map(({node}, index) => (
-        <Comp key={index} node={node} />
-      ))}
-  </ul>
-)
+const CvPage = ({data}) => {
+  const {locale} = useIntl()
 
-const CvPage = ({data, intl: {locale}}) => (
-  <main id="cv">
-    <SEO title="CV" lang={locale} />
-    <h1>
-      <Link to="/">Antoine Rousseau</Link>
-    </h1>
-    <FormattedMessage id="age" values={{age: getAge()}} tagName="p" />
-    <FormattedMessage id="freelanceExperience" tagName="h2" />
-    {getList(data.allContentfulFreelanceExperience, FreelanceExperience, locale)}
-    <FormattedMessage id="employeeExperience" tagName="h2" />
-    {getList(data.allContentfulEmployeeExperience, EmployeeExperience, locale)}
-    <FormattedMessage id="education" tagName="h2" />
-    {getList(data.allContentfulEducation, Education, locale)}
-    <FormattedMessage id="skills" tagName="h2" />
-    {getList(data.allContentfulExtra, Extra, locale, 'skill')}
-    <FormattedMessage id="languages" tagName="h2" />
-    {getList(data.allContentfulExtra, Extra, locale, 'lang')}
-    <FormattedMessage id="extra" tagName="h2" />
-    {getList(data.allContentfulExtra, Extra, locale, 'extra')}
-  </main>
-)
+  const getList = ({edges}, Comp, type) => (
+    <ul>
+      {edges
+        .filter(({node}) => node.node_locale === LOCALES[locale] && (!type || type === node.type))
+        .map(({node}, index) => (
+          <Comp key={index} node={node} />
+        ))}
+    </ul>
+  )
 
-export default injectIntl(CvPage)
+  return (
+    <main id="cv">
+      <SEO title="CV" lang={locale} />
+      <h1>
+        <Link to="/">Antoine Rousseau</Link>
+      </h1>
+      <FormattedMessage id="age" values={{age: getAge()}} tagName="p" />
+      <FormattedMessage id="freelanceExperience" tagName="h2" />
+      {getList(data.allContentfulFreelanceExperience, FreelanceExperience)}
+      <FormattedMessage id="employeeExperience" tagName="h2" />
+      {getList(data.allContentfulEmployeeExperience, EmployeeExperience)}
+      <FormattedMessage id="education" tagName="h2" />
+      {getList(data.allContentfulEducation, Education)}
+      <FormattedMessage id="skills" tagName="h2" />
+      {getList(data.allContentfulExtra, Extra, 'skill')}
+      <FormattedMessage id="languages" tagName="h2" />
+      {getList(data.allContentfulExtra, Extra, 'lang')}
+      <FormattedMessage id="extra" tagName="h2" />
+      {getList(data.allContentfulExtra, Extra, 'extra')}
+    </main>
+  )
+}
+
+export default CvPage
 
 export const query = graphql`
   {
@@ -66,10 +70,9 @@ export const query = graphql`
           clientUrl
           clientType
           location
+          tags
           description {
-            childContentfulRichText {
-              html
-            }
+            json
           }
         }
       }
@@ -83,10 +86,9 @@ export const query = graphql`
           companyName
           companyUrl
           location
+          tags
           description {
-            childContentfulRichText {
-              html
-            }
+            json
           }
         }
       }
@@ -100,6 +102,7 @@ export const query = graphql`
           school
           url
           location
+          tags
         }
       }
     }

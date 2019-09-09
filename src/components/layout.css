@@ -4,6 +4,7 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  --main-color: #663399;
 }
 body {
   margin: 0;
@@ -32,19 +33,19 @@ pre {
 button {
   font: inherit;
   margin: 0;
+  border: none;
 }
 
 /* site */
-header {
-  text-align: right;
-}
 p {
   white-space: pre-line;
 }
 a {
   color: black;
 }
-button,
+a:hover {
+  color: var(--main-color);
+}
 .button {
   border: 1px solid black;
   border-radius: 4px;
@@ -55,10 +56,20 @@ button,
   padding: 8px 12px;
   margin: 10px;
 }
-button svg,
 .button svg {
   vertical-align: -2px;
   margin-right: 5px;
+}
+.button:hover {
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+.button:hover svg {
+  fill: var(--main-color);
+}
+
+header {
+  text-align: right;
 }
 main {
   margin: 0 auto;

@@ -6,7 +6,7 @@ My personal homepage made with [Gatsby](https://www.gatsbyjs.org/), [Contentful]
 
 ## Requirements
 
-- [Node](https://nodejs.org/) v8+ and [Yarn](https://yarnpkg.com/) (`brew install node yarn`)
+- [Node](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) (`brew install node yarn`)
 
 ## Setup
 

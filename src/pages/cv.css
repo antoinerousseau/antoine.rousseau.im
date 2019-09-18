@@ -35,6 +35,9 @@
   border-radius: 2px;
   font-size: 0.8rem;
 }
+#cv .tag.active {
+  background: var(--main-color);
+}
 
 @media (max-width: 750px) {
   #cv li {

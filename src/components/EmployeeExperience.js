@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import {FormattedMessage} from 'react-intl'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
+import Tag from './Tag'
+
 const EmployeeExperience = ({node: {date, position, companyName, companyUrl, location, description, tags}}) => (
   <li>
     <div className="date">{date}</div>
@@ -11,14 +13,7 @@ const EmployeeExperience = ({node: {date, position, companyName, companyUrl, loc
         {position} <FormattedMessage id="at" /> <a href={companyUrl}>{companyName}</a> ({location})
       </div>
       <div className="description">{documentToReactComponents(description.json)}</div>
-      <div className="tags">
-        {tags &&
-          tags.map((tag, index) => (
-            <button key={index} className="tag">
-              {tag}
-            </button>
-          ))}
-      </div>
+      <div className="tags">{tags && tags.map((tag, index) => <Tag key={index} name={tag} />)}</div>
     </div>
   </li>
 )

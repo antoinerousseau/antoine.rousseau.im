@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, graphql} from 'gatsby'
 import {FormattedMessage, useIntl} from 'react-intl'
 
@@ -8,6 +8,7 @@ import FreelanceExperience from '../components/FreelanceExperience'
 import EmployeeExperience from '../components/EmployeeExperience'
 import Education from '../components/Education'
 import Extra from '../components/Extra'
+import {TagContext} from '../components/Tag'
 
 import './cv.css'
 
@@ -23,6 +24,7 @@ const getAge = () => {
 
 const CvPage = ({data}) => {
   const {locale} = useIntl()
+  const [tag, setTag] = useState()
 
   const getList = ({edges}, Comp, type) => (
     <ul>
@@ -35,25 +37,27 @@ const CvPage = ({data}) => {
   )
 
   return (
-    <main id="cv">
-      <SEO title="CV" lang={locale} />
-      <h1>
-        <Link to="/">Antoine Rousseau</Link>
-      </h1>
-      <FormattedMessage id="age" values={{age: getAge()}} tagName="p" />
-      <FormattedMessage id="freelanceExperience" tagName="h2" />
-      {getList(data.allContentfulFreelanceExperience, FreelanceExperience)}
-      <FormattedMessage id="employeeExperience" tagName="h2" />
-      {getList(data.allContentfulEmployeeExperience, EmployeeExperience)}
-      <FormattedMessage id="education" tagName="h2" />
-      {getList(data.allContentfulEducation, Education)}
-      <FormattedMessage id="skills" tagName="h2" />
-      {getList(data.allContentfulExtra, Extra, 'skill')}
-      <FormattedMessage id="languages" tagName="h2" />
-      {getList(data.allContentfulExtra, Extra, 'lang')}
-      <FormattedMessage id="extra" tagName="h2" />
-      {getList(data.allContentfulExtra, Extra, 'extra')}
-    </main>
+    <TagContext.Provider value={{tag, setTag}}>
+      <main id="cv">
+        <SEO title="CV" lang={locale} />
+        <h1>
+          <Link to="/">Antoine Rousseau</Link>
+        </h1>
+        <FormattedMessage id="age" values={{age: getAge()}} tagName="p" />
+        <FormattedMessage id="freelanceExperience" tagName="h2" />
+        {getList(data.allContentfulFreelanceExperience, FreelanceExperience)}
+        <FormattedMessage id="employeeExperience" tagName="h2" />
+        {getList(data.allContentfulEmployeeExperience, EmployeeExperience)}
+        <FormattedMessage id="education" tagName="h2" />
+        {getList(data.allContentfulEducation, Education)}
+        <FormattedMessage id="skills" tagName="h2" />
+        {getList(data.allContentfulExtra, Extra, 'skill')}
+        <FormattedMessage id="languages" tagName="h2" />
+        {getList(data.allContentfulExtra, Extra, 'lang')}
+        <FormattedMessage id="extra" tagName="h2" />
+        {getList(data.allContentfulExtra, Extra, 'extra')}
+      </main>
+    </TagContext.Provider>
   )
 }
 

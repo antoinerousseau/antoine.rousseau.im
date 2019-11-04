@@ -8,11 +8,11 @@
   font-size: 1.5em;
   margin: 0.5em 0;
 }
-#home a {
+#home a.button {
   margin: 10px 20px 10px 0;
 }
 @media (max-width: 450px) {
-  #home a {
+  #home a.button {
     display: block;
     margin: 25px 0;
   }

@@ -6,12 +6,18 @@ My personal homepage made with [Gatsby](https://www.gatsbyjs.org/), [Contentful]
 
 ## Requirements
 
-- [Node](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) (`brew install node yarn`)
+- [Node](https://nodejs.org/) and [Yarn](https://yarnpkg.com/)
 
 ## Setup
 
     yarn
-    echo "CONTENTFUL_ACCESS_TOKEN=xxxxxxxx" > .env
+
+Create a [Contentful](https://www.contentful.com/) space. You can use `contentful-export.json` to create the Content Types.
+
+Create a `.env` file with:
+
+    CONTENTFUL_SPACE_ID=xxxxxxxx
+    CONTENTFUL_ACCESS_TOKEN=xxxxxxxx
 
 ## Develop
 

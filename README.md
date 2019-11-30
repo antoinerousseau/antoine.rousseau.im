@@ -18,6 +18,7 @@ Create a `.env` file with:
 
     CONTENTFUL_SPACE_ID=xxxxxxxx
     CONTENTFUL_ACCESS_TOKEN=xxxxxxxx
+    GATSBY_BUGSNAG=xxxxxxxx
 
 ## Develop
 

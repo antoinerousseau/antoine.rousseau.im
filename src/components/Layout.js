@@ -8,11 +8,13 @@ import LanguageIcon from '../icons/Language'
 
 import './layout.css'
 
+const initialLang = () => ((navigator.language || navigator.userLanguage).substr(0, 2) === 'fr' ? 'fr' : 'en')
+
 const Layout = ({children}) => {
   const [lang, setLang] = useState('fr')
 
   useEffect(() => {
-    setLang((navigator.language || navigator.userLanguage).substr(0, 2))
+    setLang(initialLang())
   }, [])
 
   const data = useStaticQuery(query)

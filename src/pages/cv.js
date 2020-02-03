@@ -7,6 +7,7 @@ import SEO from '../components/SEO'
 import FreelanceExperience from '../components/FreelanceExperience'
 import EmployeeExperience from '../components/EmployeeExperience'
 import Education from '../components/Education'
+import Talk from '../components/Talk'
 import Extra from '../components/Extra'
 import {TagContext} from '../components/Tag'
 
@@ -50,6 +51,8 @@ const CvPage = ({data}) => {
         {getList(data.allContentfulEmployeeExperience, EmployeeExperience)}
         <FormattedMessage id="education" tagName="h2" />
         {getList(data.allContentfulEducation, Education)}
+        <FormattedMessage id="talks" tagName="h2" />
+        {getList(data.allContentfulTalk, Talk)}
         <FormattedMessage id="skills" tagName="h2" />
         {getList(data.allContentfulExtra, Extra, 'skill')}
         <FormattedMessage id="languages" tagName="h2" />
@@ -106,6 +109,20 @@ export const query = graphql`
           school
           url
           location
+          tags
+        }
+      }
+    }
+    allContentfulTalk(sort: {fields: [date], order: DESC}) {
+      edges {
+        node {
+          node_locale
+          date
+          title
+          url
+          description {
+            json
+          }
           tags
         }
       }

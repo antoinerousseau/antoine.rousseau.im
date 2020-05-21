@@ -1,23 +1,23 @@
-import React from 'react'
-import {Link, graphql} from 'gatsby'
-import {FormattedMessage, useIntl} from 'react-intl'
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import React from "react"
+import { Link, graphql } from "gatsby"
+import { FormattedMessage, useIntl } from "react-intl"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import {LOCALES} from '../config'
-import SEO from '../components/SEO'
-import DescriptionIcon from '../icons/Description'
-import MaltIcon from '../icons/Malt'
-import LinkedinIcon from '../icons/Linkedin'
-import MailIcon from '../icons/Mail'
+import { LOCALES } from "../config"
+import SEO from "../components/SEO"
+import DescriptionIcon from "../icons/Description"
+import MaltIcon from "../icons/Malt"
+import LinkedinIcon from "../icons/Linkedin"
+import MailIcon from "../icons/Mail"
 
-import './index.css'
+import "./index.css"
 
-const HomePage = ({data}) => {
-  const {locale} = useIntl()
+const HomePage = ({ data }) => {
+  const { locale } = useIntl()
 
-  const {welcome, linkedin, malt, email} = data.allContentfulHome.edges.find(
-    ({node}) => node.node_locale === LOCALES[locale]
-  ).node
+  const { welcome, linkedin, malt, email } = data.allContentfulHome.nodes.find(
+    ({ node_locale }) => node_locale === LOCALES[locale]
+  )
 
   return (
     <main id="home">
@@ -49,16 +49,14 @@ export default HomePage
 export const query = graphql`
   {
     allContentfulHome {
-      edges {
-        node {
-          node_locale
-          welcome {
-            json
-          }
-          linkedin
-          malt
-          email
+      nodes {
+        node_locale
+        welcome {
+          json
         }
+        linkedin
+        malt
+        email
       }
     }
   }

@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-const Education = ({node: {date, degree, url, school, location}}) => (
+const Education = ({ node: { date, degree, url, school, location } }) => (
   <li>
     <div className="date">{date}</div>
     <div className="content">

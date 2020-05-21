@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import React from "react"
+import PropTypes from "prop-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import Tag from './Tag'
-import {FormattedDate} from 'react-intl'
+import Tag from "./Tag"
+import { FormattedDate } from "react-intl"
 
-const Talk = ({node: {date, title, url, description, tags}}) => (
+const Talk = ({ node: { date, title, url, description, tags } }) => (
   <li>
     <div className="date">
       <FormattedDate value={date} day="numeric" month="long" year="numeric" />

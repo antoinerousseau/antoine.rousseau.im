@@ -5,6 +5,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   --main-color: #663399;
+  --grey: #bbb;
 }
 body {
   margin: 0;
@@ -43,9 +44,11 @@ p {
 }
 a {
   color: black;
+  text-decoration-color: var(--grey);
 }
 a:hover {
   color: var(--main-color);
+  text-decoration-color: var(--main-color);
 }
 .button {
   border: 1px solid black;

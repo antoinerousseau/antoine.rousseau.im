@@ -6,19 +6,22 @@
 
 // You can delete this file if you're not using it
 
-import React from 'react'
+import React from "react"
+import Bugsnag from "@bugsnag/js"
+import BugsnagReact from "@bugsnag/plugin-react"
 
-import bugsnag from '@bugsnag/js'
-import bugsnagReact from '@bugsnag/plugin-react'
+import Layout from "./src/components/Layout"
 
-import Layout from './src/components/Layout'
-
-const bugsnagClient = bugsnag(process.env.GATSBY_BUGSNAG)
-bugsnagClient.use(bugsnagReact, React)
+Bugsnag.start({
+  apiKey: process.env.GATSBY_BUGSNAG,
+  releaseStage: process.env.NODE_ENV,
+  enabledReleaseStages: ["production"],
+  plugins: [new BugsnagReact(React)],
+})
 
 // wrap your entire app tree in the ErrorBoundary provided
-const ErrorBoundary = bugsnagClient.getPlugin('react')
+const ErrorBoundary = Bugsnag.getPlugin("react")
 
-export const wrapRootElement = ({element}) => <ErrorBoundary>{element}</ErrorBoundary>
+export const wrapRootElement = ({ element }) => <ErrorBoundary>{element}</ErrorBoundary>
 
-export const wrapPageElement = ({element}) => <Layout>{element}</Layout>
+export const wrapPageElement = ({ element }) => <Layout>{element}</Layout>

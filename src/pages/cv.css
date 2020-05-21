@@ -18,7 +18,6 @@
 }
 #cv .description {
   font-weight: 300;
-  font-style: italic;
 }
 #cv .description p {
   margin: 0.3em 0 0;
@@ -38,6 +37,33 @@
 #cv .tag.active {
   background: var(--main-color);
 }
+#cv blockquote {
+  margin: 0;
+  padding: 1px 15px;
+  position: relative;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 300;
+}
+#cv blockquote::before {
+  content: "“";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  font-size: 48px;
+  color: rgba(0, 0, 0, 0.3);
+}
+#cv cite::before {
+  content: "— ";
+}
+#cv cite {
+  text-align: right;
+  display: block;
+  margin-top: -10px;
+}
+cite a {
+  text-decoration: none;
+}
 
 @media (max-width: 750px) {
   #cv li {
@@ -46,10 +72,10 @@
   #cv li .date {
     margin: 1.5em 0 0.5em;
   }
-  html[lang='fr'] #cv li .date::after {
-    content: ' :';
+  html[lang="fr"] #cv li .date::after {
+    content: " :";
   }
-  html[lang='en'] #cv li .date::after {
-    content: ':';
+  html[lang="en"] #cv li .date::after {
+    content: ":";
   }
 }

@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import {StaticQuery, graphql} from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
 
-const SEO = ({lang, title}) => (
+const SEO = ({ lang, title }) => (
   <StaticQuery
     query={query}
     render={(data) => {
-      const {title: siteTitle, description, keywords} = data.site.siteMetadata
+      const { title: siteTitle, description, keywords } = data.site.siteMetadata
       return (
         <Helmet
           htmlAttributes={{

@@ -1,17 +1,17 @@
-import React, {useState, useEffect} from 'react'
-import PropTypes from 'prop-types'
-import {IntlProvider, FormattedMessage} from 'react-intl'
-import {useStaticQuery, graphql} from 'gatsby'
+import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
+import { IntlProvider, FormattedMessage } from "react-intl"
+import { useStaticQuery, graphql } from "gatsby"
 
-import {LOCALES} from '../config'
-import LanguageIcon from '../icons/Language'
+import { LOCALES } from "../config"
+import LanguageIcon from "../icons/Language"
 
-import './layout.css'
+import "./layout.css"
 
-const initialLang = () => ((navigator.language || navigator.userLanguage).substr(0, 2) === 'fr' ? 'fr' : 'en')
+const initialLang = () => ((navigator.language || navigator.userLanguage).substr(0, 2) === "fr" ? "fr" : "en")
 
-const Layout = ({children}) => {
-  const [lang, setLang] = useState('fr')
+const Layout = ({ children }) => {
+  const [lang, setLang] = useState("fr")
 
   useEffect(() => {
     setLang(initialLang())
@@ -19,14 +19,14 @@ const Layout = ({children}) => {
 
   const data = useStaticQuery(query)
   const messages = {}
-  data.allContentfulMessage.edges.forEach(({node}) => {
+  data.allContentfulMessage.edges.forEach(({ node }) => {
     if (node.node_locale === LOCALES[lang]) {
       messages[node.key] = node.message.message
     }
   })
 
   const switchLang = () => {
-    setLang(lang === 'fr' ? 'en' : 'fr')
+    setLang(lang === "fr" ? "en" : "fr")
   }
 
   return (

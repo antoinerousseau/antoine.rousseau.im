@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 const MaltIcon = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 92.3 92.3" {...props}>

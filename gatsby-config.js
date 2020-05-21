@@ -1,22 +1,22 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env`,
 })
-process.env.NODE_ICU_DATA = 'node_modules/full-icu'
+process.env.NODE_ICU_DATA = "node_modules/full-icu"
 
 module.exports = {
   siteMetadata: {
     title: `Antoine Rousseau`,
     description: `Freelance Web development and consulting`,
-    keywords: `react, javascript, react native, gatsby, freelance, consulting, development, toulouse`,
+    keywords: `react, javascript, typescript, react native, gatsby, freelance, consulting, development, toulouse`,
     author: `@mOoot`,
     siteUrl: `https://antoine.rousseau.im`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Lato:300,400,300i,400i'],
+          families: ["Lato:300,400,300i,400i"],
         },
       },
     },

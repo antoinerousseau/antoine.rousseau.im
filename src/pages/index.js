@@ -6,7 +6,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { LOCALES } from "../config"
 import SEO from "../components/SEO"
 import DescriptionIcon from "../icons/Description"
-import MaltIcon from "../icons/Malt"
 import LinkedinIcon from "../icons/Linkedin"
 import MailIcon from "../icons/Mail"
 
@@ -15,7 +14,7 @@ import "./index.css"
 const HomePage = ({ data }) => {
   const { locale } = useIntl()
 
-  const { welcome, linkedin, malt, email } = data.allContentfulHome.nodes.find(
+  const { welcome, linkedin, email } = data.allContentfulHome.nodes.find(
     ({ node_locale }) => node_locale === LOCALES[locale]
   )
 
@@ -28,10 +27,6 @@ const HomePage = ({ data }) => {
         <DescriptionIcon />
         <FormattedMessage id="cv" />
       </Link>
-      <a href={malt} className="button">
-        <MaltIcon />
-        <FormattedMessage id="malt" />
-      </a>
       <a href={linkedin} className="button">
         <LinkedinIcon />
         <FormattedMessage id="linkedin" />
@@ -55,7 +50,6 @@ export const query = graphql`
           json
         }
         linkedin
-        malt
         email
       }
     }
